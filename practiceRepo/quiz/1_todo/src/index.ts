@@ -1,4 +1,4 @@
-let todoItems;
+let todoItems: Array<Object>;
 
 // api
 function fetchTodoItems() {
@@ -16,15 +16,15 @@ function fetchTodos() {
   return todos;
 }
 
-function addTodo(todo) {
+function addTodo(todo: Object): void {
   todoItems.push(todo);
 }
 
-function deleteTodo(index) {
+function deleteTodo(index: number): void {
   todoItems.splice(index, 1);
 }
 
-function completeTodo(index, todo) {
+function completeTodo(index: number, todo: {id: number, title: string, done: boolean}): void {
   todo.done = true;
   todoItems.splice(index, 1, todo);
 }
@@ -35,16 +35,21 @@ function logFirstTodo() {
 }
 
 function showCompleted() {
-  return todoItems.filter(item => item.done);
+  return todoItems.filter((item:{id: number, title: string, done: boolean}) => item.done);
 }
 
 // TODO: 아래 함수의 내용을 채워보세요. 아래 함수는 `addTodo()` 함수를 이용하여 2개의 새 할 일을 추가하는 함수입니다.
-function addTwoTodoItems() {
+function addTwoTodoItems(): void {
   // addTodo() 함수를 두 번 호출하여 todoItems에 새 할 일이 2개 추가되어야 합니다.
+  const todo1 = {id: 4, title: '첫번째', done: false}
+  const todo2 = {id: 5, title: '두번째', done: false}
+
+  addTodo(todo1);
+  addTodo(todo2);
 }
 
 // NOTE: 유틸 함수
-function log() {
+function log(): void {
   console.log(todoItems);
 }
 
