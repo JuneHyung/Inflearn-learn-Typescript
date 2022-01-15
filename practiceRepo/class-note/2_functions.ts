@@ -20,5 +20,6 @@ sum(10, 20); // 30
 function log(a: string, b?: string, c?: string){
 
 }
+
 log('helloWorld');
 log('hello ts', 'abc')
