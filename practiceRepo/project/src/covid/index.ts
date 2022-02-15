@@ -1,5 +1,5 @@
 // 타입들을 모아놓은 파일.
-interface Country {
+export interface Country {
   Country: string;
   CountryCode: string;
   Date: string;
