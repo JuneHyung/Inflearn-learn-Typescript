@@ -1,5 +1,5 @@
 // 타입들을 모아놓은 파일.
-export interface Country {
+interface Country {
   Country: string;
   CountryCode: string;
   Date: string;
@@ -48,4 +48,10 @@ interface CountrySummaryInfo {
 
 type CountrySummaryResponse = CountrySummaryInfo[];
 
-export { CovidSummaryResponse, CovidStatus, CountrySummaryResponse };
+export {
+  CovidSummaryResponse,
+  CovidStatus,
+  CountrySummaryResponse,
+  Country,
+  CountrySummaryInfo,
+};
